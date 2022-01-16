@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -18,7 +20,7 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
           children: [
             Obx(
               () => Text(
-                "Age : ${controller.age.value} years",
+                "Age : ${controller.age.value}years ${controller.age1.value}days",
                 style: TextStyle(fontSize: 20),
               ),
             ),
@@ -28,59 +30,74 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  child: Text('Start Date'),
-                  onPressed: () async {
-                    DateTime? date = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now().add(
-                        const Duration(days: 0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: OutlinedButton(
+                        child: Text('Start Date'),
+                        onPressed: () async {
+                          DateTime? date = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now().add(
+                              const Duration(days: 0),
+                            ),
+                            firstDate: DateTime.now().add(
+                              const Duration(days: -30000),
+                            ),
+                            lastDate: DateTime.now().add(
+                              const Duration(days: 3000),
+                            ),
+                          );
+                          controller.startDate.value = date!;
+                        },
                       ),
-                      firstDate: DateTime.now().add(
-                        const Duration(days: -30000),
-                      ),
-                      lastDate: DateTime.now().add(
-                        const Duration(days: 3000),
-                      ),
-                    );
-                    controller.startDate.value = date!;
-                  },
-                ),
-                Obx(
-                  () => Text("${controller.startDate.value}"),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                ElevatedButton(
-                  child: Text('End Date'),
-                  onPressed: () async {
-                    DateTime? date = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now().add(
-                        const Duration(days: 0),
-                      ),
-                      firstDate: DateTime.now().add(
-                        const Duration(days: -30000),
-                      ),
-                      lastDate: DateTime.now().add(
-                        const Duration(days: 3000),
-                      ),
-                    );
-                    controller.endDate.value = date!;
-                  },
-                ),
-                Obx(
-                  () => Text("${controller.endDate.value}"),
+                    ),
+                    Obx(
+                      () => Text("${controller.startDate.value}"),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(
-                  child: Text('Calculate'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: OutlinedButton(
+                        child: Text('End Date'),
+                        onPressed: () async {
+                          DateTime? date = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now().add(
+                              const Duration(days: 0),
+                            ),
+                            firstDate: DateTime.now().add(
+                              const Duration(days: -30000),
+                            ),
+                            lastDate: DateTime.now().add(
+                              const Duration(days: 3000),
+                            ),
+                          );
+                          controller.endDate.value = date!;
+                        },
+                      ),
+                    ),
+                    Obx(
+                      () => Text("${controller.endDate.value}"),
+                    ),
+                  ],
+                ),
+                OutlinedButton(
                   onPressed: () {
                     controller.calculateAge();
                   },
+                  child: Text(
+                    "Calculate",
+                  ),
                 ),
               ],
             ),
