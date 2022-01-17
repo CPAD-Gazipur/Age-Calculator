@@ -1,5 +1,4 @@
-import 'dart:html';
-
+// import 'package:age_calculator/app/modules/about/views/about_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -11,7 +10,7 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AgeCalculatorView'),
+        title: Text('Age Calculator'),
         centerTitle: true,
       ),
       body: Center(
@@ -104,6 +103,9 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                   child: Text(
                     "Calculate",
                   ),
+                ),
+                SizedBox(
+                  height: 55,
                 ),
               ],
             ),
