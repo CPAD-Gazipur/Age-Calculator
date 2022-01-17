@@ -6,18 +6,24 @@ class AgeCalculatorController extends GetxController {
   final startDate = DateTime.now().obs;
   final endDate = DateTime.now().obs;
 
-  // final sty = DateTime(1).obs;
-  // final endy = DateTime(365).obs;
+  final sty = DateTime(1).obs;
+  final endy = DateTime(365).obs;
+
+  final s = DateTime(1).obs;
+  final e = DateTime(365).obs;
 
   final age = 0.0.obs;
-  final age1 = 0000.0.obs;
+  final age1 = 0.0.obs;
+  final age2 = 0.0.obs;
 
   void calculateAge() {
     var dateRange = DateTimeRange(start: startDate.value, end: endDate.value);
     var months = MonthCalculator.monthsInRange(dateRange).months;
-    // var dayrange = DateTimeRange(start: sty.value, end: endy.value);
-    // var days = MonthCalculator.monthsInRange(dayrange).days;
+    var dayrange = DateTimeRange(start: sty.value, end: endy.value);
+    var days = MonthCalculator.monthsInRange(dayrange).days;
+
     age.value = months / 12;
-    // age1.value = days / 12;
+    age1.value = days / 1;
+    age2.value = months / 1;
   }
 }

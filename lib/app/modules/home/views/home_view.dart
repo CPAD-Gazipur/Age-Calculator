@@ -47,33 +47,33 @@ class DatePickerButtons extends StatelessWidget {
                     if (date.isBefore(firstDate)) return false;
                     return true;
                   },
-                ).then(
-                  (lastDate) {
-                    if (lastDate == null) return;
-                    final dateRange =
-                        DateTimeRange(start: firstDate, end: lastDate);
-                    showDialog<void>(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text("Your Age is :"),
-                          content: Text(
-                            "${MonthCalculator.monthsInRange(dateRange).months} months and ${MonthCalculator.monthsInRange(dateRange).days} days",
-                            style: Theme.of(context).textTheme.headline6,
-                          ),
-                          // actions: <Widget>[
-                          //   ElevatedButton(
-                          //     child: const Text("OK"),
-                          //     onPressed: () {
-                          //       Navigator.of(context).pop();
-                          //     },
-                          //   ),
-                          // ],
-                        );
-                      },
-                    );
-                  },
-                );
+                ); //.then(
+                //   (lastDate) {
+                //     if (lastDate == null) return;
+                //     final dateRange =
+                //         DateTimeRange(start: firstDate, end: lastDate);
+                //     showDialog<void>(
+                //       context: context,
+                //       builder: (context) {
+                //         return AlertDialog(
+                //           title: const Text("Your Age is :"),
+                //           content: Text(
+                //             "${MonthCalculator.monthsInRange(dateRange).months} months and ${MonthCalculator.monthsInRange(dateRange).days} days",
+                //             style: Theme.of(context).textTheme.headline6,
+                //           ),
+                //           // actions: <Widget>[
+                //           //   ElevatedButton(
+                //           //     child: const Text("OK"),
+                //           //     onPressed: () {
+                //           //       Navigator.of(context).pop();
+                //           //     },
+                //           //   ),
+                //           // ],
+                //         );
+                //       },
+                //     );
+                //   },
+                // );
               },
             );
           },

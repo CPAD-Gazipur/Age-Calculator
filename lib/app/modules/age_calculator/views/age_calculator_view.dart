@@ -18,11 +18,13 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              "Your Age is :",
+              style: TextStyle(fontSize: 20),
+            ),
             Obx(
               () => Text(
-                "Age : ${controller.age.value}years ${controller.age1.value}days",
-                style: TextStyle(fontSize: 20),
-              ),
+                  " ${controller.age.value}years  ${controller.age2.value} months  ${controller.age1.value} days"),
             ),
             SizedBox(
               height: 20,
@@ -51,6 +53,8 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                             ),
                           );
                           controller.startDate.value = date!;
+                          controller.sty.value = date;
+                          controller.s.value = date;
                         },
                       ),
                     ),
@@ -83,6 +87,8 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                             ),
                           );
                           controller.endDate.value = date!;
+                          controller.endy.value = date;
+                          controller.s.value = date;
                         },
                       ),
                     ),
