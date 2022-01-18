@@ -18,7 +18,7 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
           children: [
             Obx(
               () => Text(
-                "Age : ${controller.age.value} years",
+                "Age : ${controller.age.value}",
                 style: TextStyle(fontSize: 20),
               ),
             ),
@@ -47,7 +47,7 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                   },
                 ),
                 Obx(
-                  () => Text("${controller.startDate.value}"),
+                  () => Text(controller.getStartDate()),
                 ),
                 SizedBox(
                   height: 10,
@@ -71,7 +71,7 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                   },
                 ),
                 Obx(
-                  () => Text("${controller.endDate.value}"),
+                  () => Text(controller.getEndDate()),
                 ),
                 SizedBox(
                   height: 10,
