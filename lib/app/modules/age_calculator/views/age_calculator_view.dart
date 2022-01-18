@@ -51,14 +51,13 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                               const Duration(days: 3000),
                             ),
                           );
-                          controller.startDate.value = date!;
-                          controller.sty.value = date;
-                          controller.s.value = date;
+
+                          controller.setStartDate(date);
                         },
                       ),
                     ),
                     Obx(
-                      () => Text("${controller.startDate.value}"),
+                      () => Text(controller.getStartDate()),
                     ),
                   ],
                 ),
@@ -85,14 +84,12 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                               const Duration(days: 3000),
                             ),
                           );
-                          controller.endDate.value = date!;
-                          controller.endy.value = date;
-                          controller.s.value = date;
+                          controller.setEndDate(date);
                         },
                       ),
                     ),
                     Obx(
-                      () => Text("${controller.endDate.value}"),
+                      () => Text(controller.getEndDate()),
                     ),
                   ],
                 ),
