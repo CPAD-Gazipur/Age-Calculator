@@ -26,7 +26,7 @@ class AgeCalculatorController extends GetxController {
 
     /*YEAR*/ age.value = (months / 12).floorToDouble();
 
-    /*DAY*/ age1.value = ((days / 1)).floorToDouble();
+    /*DAY*/ age1.value = ((days / 1) + 1).floorToDouble();
 
     /*MONTH*/ age2.value = ((months % 12)).floorToDouble();
   }

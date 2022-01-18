@@ -52,6 +52,16 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                             ),
                           );
 
+                          actions:
+                          <Widget>[
+                            ElevatedButton(
+                              child: const Text("OK"),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ];
+
                           controller.setStartDate(date);
                         },
                       ),
@@ -84,6 +94,15 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
                               const Duration(days: 3000),
                             ),
                           );
+                          actions:
+                          <Widget>[
+                            ElevatedButton(
+                              child: const Text("OK"),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ];
                           controller.setEndDate(date);
                         },
                       ),
