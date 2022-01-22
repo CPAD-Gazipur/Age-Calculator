@@ -1,3 +1,3 @@
 # Age-Calculator(Contributed by YEASEEN AHMED)
-![Screenshot (407)](https://user-images.githubusercontent.com/92775489/150188665-14944850-44c7-4581-8867-42a5f3f7e3df.png)
-![Screenshot (408)](https://user-images.githubusercontent.com/92775489/150189230-b67ca9e5-ecd4-463a-8ee8-e8554a1b12dd.png)
+![Screenshot (409)](https://user-images.githubusercontent.com/92775489/150640990-57e84c7f-88ef-46ca-9347-e25009fab527.png)
+![Screenshot (410)](https://user-images.githubusercontent.com/92775489/150640994-74c6599c-36d4-4132-ac54-00e2b5dc4a96.png)
