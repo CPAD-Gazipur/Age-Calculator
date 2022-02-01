@@ -10,19 +10,6 @@ class AgeCalculatorView extends GetView<AgeCalculatorController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff000814),
-      // appBar: AppBar(
-      //   backgroundColor: Color(0xff03071e),
-      //   // shadowColor: Color(0xFFffba08),
-      //   elevation: 6.0,
-      //   title: Text(
-      //     'Age Calculator',
-      //     style: TextStyle(
-      //       color: Colors.white,
-      //       fontSize: 20.0,
-      //     ),
-      //   ),
-      //   centerTitle: true,
-      // ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
